@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvMaze.Scraper", "TvMaze.Sc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvMaze.ApiClient", "ApiClient\TvMaze.ApiClient.csproj", "{2422E5C9-8D9F-4335-8D36-7A0A9F073303}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{0B51E1C6-6B5D-4383-9FB1-88E53031557B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{2422E5C9-8D9F-4335-8D36-7A0A9F073303}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2422E5C9-8D9F-4335-8D36-7A0A9F073303}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2422E5C9-8D9F-4335-8D36-7A0A9F073303}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B51E1C6-6B5D-4383-9FB1-88E53031557B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B51E1C6-6B5D-4383-9FB1-88E53031557B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B51E1C6-6B5D-4383-9FB1-88E53031557B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B51E1C6-6B5D-4383-9FB1-88E53031557B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
