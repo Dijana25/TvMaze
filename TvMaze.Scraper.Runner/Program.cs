@@ -39,7 +39,7 @@ namespace TvMaze.Scraper.Runner
                 .AddPolicyHandler(RetryPolicyProvider.Get());
 
             services.AddDbContext<TvMazeContext>(options =>
-                options.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=master;Trusted_Connection=True;")
+                options.UseSqlServer(Configuration.GetConnectionString("TvMaze"))
             );
 
             services.AddLogging(builder => builder.AddConsole());

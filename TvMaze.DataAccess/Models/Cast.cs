@@ -8,8 +8,6 @@ namespace TvMaze.DataAccess.Models
 {
     public class Cast
     {
-        [Key]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         public int TvMazeId { get; set; }

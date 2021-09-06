@@ -16,9 +16,9 @@ namespace TvMaze.ShowCastRestApi.Controllers
     {
         private readonly int PAGE_SIZE;
 
-        private readonly TvMazeRepository _repository;
+        private readonly ITvMazeRepository _repository;
 
-        public ShowsController(TvMazeRepository repository)
+        public ShowsController(ITvMazeRepository repository)
         {
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
             PAGE_SIZE = Constants.PAGE_SIZE;

@@ -6,11 +6,8 @@ using System.Text;
 
 namespace TvMaze.DataAccess.Models
 {
-    
     public class Show
     {
-        [Key]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         public int TvMazeId { get; set; }
