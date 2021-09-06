@@ -8,5 +8,6 @@ namespace Common
         public static int POLICY_RETRY_COUNT = 5;
         public static float POLICY_INITIAL_DELAY_IN_SECONDS = 1.5f;
         public static int POLICY_JITTER_IN_MILLISECONDS = 500;
+        public static int PAGE_SIZE = 10;
     }
 }
