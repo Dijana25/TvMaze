@@ -7,7 +7,7 @@ using TvMaze.DataAccess.Models;
 
 namespace TvMaze.DataAccess.Repositories
 {
-    public class TvMazeRepository
+    public class TvMazeRepository : ITvMazeRepository
     {
         private readonly TvMazeContext _dbContext;
 

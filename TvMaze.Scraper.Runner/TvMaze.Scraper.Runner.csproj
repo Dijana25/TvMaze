@@ -19,5 +19,8 @@
     <ProjectReference Include="..\TvMaze.DataAccess\TvMaze.DataAccess.csproj" />
     <ProjectReference Include="..\TvMaze.Scraper\TvMaze.Scraper.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="Microsoft.NETCore.App" Version="2.1.26" />
+  </ItemGroup>
 
 </Project>

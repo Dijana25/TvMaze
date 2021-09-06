@@ -10,11 +10,11 @@ namespace TvMaze.Scraper
     {
         private static readonly Random _jitterer = new Random();
 
-        public static Policy<HttpResponseMessage> Get()
+        public static IAsyncPolicy<HttpResponseMessage> Get()
         {
             var policy = Policy
                 .HandleResult<HttpResponseMessage>(ShouldRetryRequest)
-                .WaitAndRetry(Constants.POLICY_RETRY_COUNT, CalculateDelay);
+                .WaitAndRetryAsync(Constants.POLICY_RETRY_COUNT, CalculateDelay);
 
             return policy;
         }

@@ -23,6 +23,7 @@ namespace TvMaze.Scraper.Runner
             ServiceProvider serviceProvider = services.BuildServiceProvider();
             var scraper = serviceProvider.GetRequiredService<TvMazeScraper>();
 
+            //Get from MazeAPI and write into Db
             await scraper.RunAsync();
 
             serviceProvider.Dispose();
@@ -31,20 +32,17 @@ namespace TvMaze.Scraper.Runner
         private static void ConfigureServices(IServiceCollection services, IConfiguration configuration)
         {
             services.AddTransient<TvMazeScraper>();
-
-            services.AddTransient<TvMazeRepository>();
-
-            services.AddTransient<TvMazeApiClient>();
+            services.AddTransient<ITvMazeRepository, TvMazeRepository>();
+            services.AddTransient<ITvMazeApiClient, TvMazeApiClient>();
 
             services.AddHttpClient<TvMazeApiClient>()
-                .AddPolicyHandler((Polly.IAsyncPolicy<System.Net.Http.HttpResponseMessage>)RetryPolicyProvider.Get());
+                .AddPolicyHandler(RetryPolicyProvider.Get());
 
             services.AddDbContext<TvMazeContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("TvMaze"))
+                options.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=master;Trusted_Connection=True;")
             );
 
             services.AddLogging(builder => builder.AddConsole());
         }
-
     }
 }
