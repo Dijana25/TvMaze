@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TvMaze.ApiClient;
+using TvMaze.ApiClient.Models;
 using TvMaze.DataAccess.Models;
 using TvMaze.DataAccess.Repositories;
 
@@ -53,7 +54,7 @@ namespace TvMaze.Scraper
 
                     try
                     {
-                        List<Person> cast = await _apiClient.GetShowCastAsync(showId);
+                        List<CastItem> cast = await _apiClient.GetShowCastAsync(showId);
                         _logger.LogInformation("Retrieved the cast for show {0}", showId);
 
                         await SaveShow(showInfo, cast);
@@ -73,15 +74,15 @@ namespace TvMaze.Scraper
             }
         }
 
-        private async Task SaveShow(ShowInfo showHeader, List<Person> cast)
+        private async Task SaveShow(ShowInfo showHeader, List<CastItem> cast)
         {
             try
             {
                 IEnumerable<Cast> castDbos = cast.Select(it => new Cast
                 {
-                    TvMazeId = it.Id,
-                    Name = it.Name,
-                    Birthday = it.Birthday
+                    TvMazeId = it.Person.Id,
+                    Name = it.Person.Name,
+                    Birthday = it.Person.Birthday
                 });
 
                 List<Cast> uniqueCast = castDbos.Distinct(new PersonEqualityComparer()).ToList();

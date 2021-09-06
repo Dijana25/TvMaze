@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using TvMaze.ApiClient.Models;
 
 namespace TvMaze.ApiClient
 {
@@ -24,9 +25,9 @@ namespace TvMaze.ApiClient
             return GetJsonAsync<List<ShowInfo>>($"/shows?page={page}");
         }
 
-        public Task<List<Person>> GetShowCastAsync(int showId)
+        public Task<List<CastItem>> GetShowCastAsync(int showId)
         {
-            return GetJsonAsync<List<Person>>($"/shows/{showId}/cast");
+            return GetJsonAsync<List<CastItem>>($"/shows/{showId}/cast");
         }
 
         private async Task<T> GetJsonAsync<T>(string url)
