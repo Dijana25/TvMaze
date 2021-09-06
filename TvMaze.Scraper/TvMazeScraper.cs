@@ -32,7 +32,11 @@ namespace TvMaze.Scraper
 
             for (int page = 0; page < PAGE_LIMIT; page++)
             {
-               await ProcessPageShows(page);
+               var result = await ProcessPageShows(page);
+                if (!result)
+                {
+                    break;
+                }
             }            
         }
 
