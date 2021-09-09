@@ -14,7 +14,7 @@ namespace TvMaze.DataAccess
             IConfigurationRoot configuration = builder.Build();            
 
             var optionsBuilder = new DbContextOptionsBuilder<TvMazeContext>();
-            optionsBuilder.UseSqlServer(configuration.GetConnectionString("TvMaze"));                       
+            optionsBuilder.UseSqlServer(configuration["TvMazeDbConnection"]);                       
 
             return new TvMazeContext(optionsBuilder.Options);
         }

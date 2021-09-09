@@ -33,7 +33,7 @@ namespace TvMaze.ShowCastRestApi
             services.AddTransient<ITvMazeRepository, TvMazeRepository>();
 
             services.AddDbContext<TvMazeContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("TvMaze"))               
+                options.UseSqlServer(Configuration["TvMazeDbConnection"])               
             );            
         }
 

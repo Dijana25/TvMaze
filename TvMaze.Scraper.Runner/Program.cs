@@ -38,8 +38,9 @@ namespace TvMaze.Scraper.Runner
             services.AddHttpClient<TvMazeApiClient>()
                 .AddPolicyHandler(RetryPolicyProvider.Get());
 
+            var test = configuration["TvMazeDbConnection"];
             services.AddDbContext<TvMazeContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("TvMaze"))
+                options.UseSqlServer(configuration["TvMazeDbConnection"])
             );
 
             services.AddLogging(builder => builder.AddConsole());
