@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TvMaze.ApiClient", "ApiClie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{0B51E1C6-6B5D-4383-9FB1-88E53031557B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvMaze.Scraper.Runner", "TvMaze.Scraper.Runner\TvMaze.Scraper.Runner.csproj", "{E0EFD6D5-DD86-4193-A5B6-EB2C022E4964}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TvMaze.Scraper.Runner", "TvMaze.Scraper.Runner\TvMaze.Scraper.Runner.csproj", "{E0EFD6D5-DD86-4193-A5B6-EB2C022E4964}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
