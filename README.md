@@ -14,7 +14,7 @@ what URI).
 *********************************************
 
 Environment:
-  .Net Core 2.2
+  .Net Core 2.2; 
   Sql Server Database - (new database created 'TVMazeDatabase')
   
 Connection string:
